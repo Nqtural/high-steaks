@@ -1,7 +1,10 @@
 *
 
 !.gitignore
+!LICENSE
 !main.py
+!README.md
+
 !static/
 !static/**
 !templates/
