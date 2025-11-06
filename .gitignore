@@ -1,0 +1,8 @@
+*
+
+!.gitignore
+!main.py
+!static/
+!static/**
+!templates/
+!templates/**
