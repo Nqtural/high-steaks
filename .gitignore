@@ -1,7 +1,12 @@
 *
 
 !.gitignore
+!LICENSE
 !main.py
+!README.md
+!requirements.txt
+!setup.sh
+
 !static/
 !static/**
 !templates/
