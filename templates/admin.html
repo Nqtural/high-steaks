@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>High Steaks</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+		<link rel="icon" href="{{ url_for('static', filename='assets/rock.svg') }}" type="image/svg">
+		<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+    </head>
+    <body>
+		<nav>
+			<h1>HIGH STEAKS</h1>
+			<p>Admin Panel</p>
+			<div class="dropdown-container">
+				<div class="dropdown">
+					<button id="dropdown-btn" aria-haspopup="true" aria-expanded="false">{{ username }}</button>
+					<div class="menu">
+						{% if is_admin %}
+						<a href="/admin">Admin page</a>
+						{% endif %}
+						<a href="/account">Account</a>
+						<a href="/">Play</a>
+						<a href="/logout">Log out</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<main>
+			<table border="1" cellpadding="6">
+				<thead>
+					<tr>
+						<th>ID</th><th>Username</th><th>Email</th><th>Admin</th><th>Balance</th>
+						<th>Bets</th><th>Wins/Draws/Losses</th><th>Wagered</th><th>Profit</th><th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for r in rows %}
+					<tr data-user-id="{{ r.id }}">
+						<td>{{ r.id }}</td>
+						<td>{{ r.username }}</td>
+						<td>{{ r.email }}</td>
+						<td>{{ r.is_admin }}</td>
+						<td>{{ r.balance }}</td>
+						<td class="bets">{{ r.bets }}</td>
+						<td>
+							<div class="win-loss-bar">
+								<div class="win-bar"><span class="wins">{{ r.wins }}</span></div>
+								<div class="draw-bar"><span class="draws">{{ r.draws }}</span></div>
+								<div class="loss-bar"><span class="losses">{{ r.losses }}</span></div>
+							</div>
+						</td>
+						<td>{{ r.wagered }}</td>
+						<td>{{ r.profit }}</td>
+						<td class="actions">
+							<button class="edit-btn">Edit</button>
+							<button class="delete-btn">Delete</button>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</main>
+    </body>
+</html>

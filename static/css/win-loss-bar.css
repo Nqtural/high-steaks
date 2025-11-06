@@ -1,0 +1,35 @@
+.win-loss-bar {
+	display: flex;
+	width: 100%;
+	height: 20px;
+	border-radius: 16px;
+	overflow: hidden;
+}
+
+.win-loss-bar div {
+	width: calc(100% / 3);
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	color: var(--background);
+	font-weight: 600;
+	transition: width 0.1s;
+}
+
+.win-loss-bar div span {
+	opacity: 0.6;
+}
+
+.win-loss-bar .win-bar {
+	background: var(--green);
+}
+
+.win-loss-bar .draw-bar {
+	background: var(--yellow);
+}
+
+.win-loss-bar .loss-bar {
+	background: var(--red);
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   fill="#000000"
+   width="800px"
+   height="800px"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="rock.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.18875"
+     inkscape:cx="402.64901"
+     inkscape:cy="400"
+     inkscape:window-width="1906"
+     inkscape:window-height="1034"
+     inkscape:window-x="5"
+     inkscape:window-y="37"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M 408.864,111.052 C 386.463,77.154 342.756,68.779 310.051,87.464 280.577,55.995 230.906,56.371 201.717,87.442 154.557,60.422 93.007,92.497 91.046,148.248 44.846,137.407 0,172.001 0,219.429 v 56.953 c 0,32.741 14.28,63.954 39.18,85.634 l 97.71,85.081 c 4.252,3.702 3.11,5.573 3.11,32.903 0,17.673 14.327,32 32,32 h 252 c 17.673,0 32,-14.327 32,-32 0,-23.513 -1.015,-30.745 3.982,-42.37 l 42.835,-99.656 C 508.911,323.797 512,308.802 512,293.406 V 178.963 C 512,126.124 457.686,90.301 408.864,111.052 Z M 464,293.406 a 64.505,64.505 0 0 1 -5.282,25.613 l -42.835,99.655 c -5.23,12.171 -7.883,25.04 -7.883,38.25 V 464 H 188 v -10.286 c 0,-16.37 -7.14,-31.977 -19.59,-42.817 L 70.7,325.817 C 56.274,313.255 48,295.236 48,276.381 v -56.953 c 0,-33.208 52,-33.537 52,0.677 v 41.228 a 16,16 0 0 0 5.493,12.067 l 7,6.095 A 16,16 0 0 0 139,267.429 V 150.857 c 0,-33.097 52,-33.725 52,0.677 v 26.751 c 0,8.836 7.164,16 16,16 h 7 c 8.836,0 16,-7.164 16,-16 v -41.143 c 0,-33.134 52,-33.675 52,0.677 v 40.466 c 0,8.836 7.163,16 16,16 h 7 c 8.837,0 16,-7.164 16,-16 v -27.429 c 0,-33.03 52,-33.78 52,0.677 v 26.751 c 0,8.836 7.163,16 16,16 h 7 c 8.837,0 16,-7.164 16,-16 0,-33.146 52,-33.613 52,0.677 z"
+     id="path1"
+     style="fill:#521881;fill-opacity:1" />
+</svg>

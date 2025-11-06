@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>High Steaks</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+		<link rel="icon" href="{{ url_for('static', filename='assets/rock.svg') }}" type="image/svg">
+		<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    </head>
+    <body>
+		<nav>
+			<h1>HIGH STEAKS</h1>
+			<p>Rock, Paper, Scissors</p>
+			<div class="dropdown-container">
+				<div class="dropdown">
+					<button id="dropdown-btn" aria-haspopup="true" aria-expanded="false">{{ username }}</button>
+					<div class="menu">
+						{% if is_admin %}
+						<a href="/admin">Admin page</a>
+						{% endif %}
+						<a href="/account">Account</a>
+						<a href="/">Play</a>
+						<a href="/logout">Log out</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<main>
+			<aside class="left">
+				<div class="bet-container">
+					<h2 title="Bet once or continuously">Mode</h2>
+					<form>
+						<input type="radio" id="manual" name="mode" value="Manual" checked="checked">
+						<label for="manual" title="One bet per click on the chosen outcome">Manual</label><br>
+						<input type="radio" id="auto" name="mode" value="Auto">
+						<label for="auto" title="Continuous betting on the chosen outcome">Auto</label><br>
+					</form>
+					<h2 title="Amount to wager on bet">Wager</h2>
+					<div class="input-container">
+						<input type="text" id="amount" placeholder="0¤" value="0">
+						<input type="text" id="amount-raw" name="amount" value="0">
+						<button id="half">x½</button>
+						<button id="double">x2</button>
+					</div>
+					<h2 title="Multiplies wager on win">Win wager multiplier</h2>
+					<div class="input-container">
+						<input type="text" id="win-multiplier" value="1.00">
+						<button id="win-multiplier-reset">⟲</button>
+					</div>
+					<h2 title="Multiplies wager on loss">Loss wager multiplier</h2>
+					<div class="input-container">
+						<input type="text" id="loss-multiplier" value="1.00">
+						<button id="loss-multiplier-reset">⟲</button>
+					</div>
+					<h2 title="Choose what outcome to bet on">Bet</h2>
+					<div class="bet-choices">
+						<button id="random-bet">Random</button>
+						<button id="rock-bet">Rock</button>
+						<button id="paper-bet">Paper</button>
+						<button id="scissors-bet">Scissors</button>
+					</div>
+				</div>
+				<p>Balance: <span id="balance">{{ balance }}</span>¤</p>
+			</aside>
+			<article>
+				<img id="user-fist" src="{{ url_for('static', filename='assets/rock.svg') }}">
+				<hr id="line">
+				<img id="computer-fist" src="{{ url_for('static', filename='assets/rock.svg') }}">
+			</article>
+			<span id="outcome"></span>
+			<aside class="right">
+				<div class="info-container">
+					<p>Profit: <span id="profit">{{ profit }}</span>¤</p>
+					<p>Wagered: <span id="wagered">{{ wagered }}</span>¤</p>
+					<p>Bets: <span id="bets">{{ bets }}</span></p>
+					<div class="win-loss-bar">
+						<div class="win-bar" id="win-bar"><span id="wins">{{ wins }}</span></div>
+						<div class="draw-bar" id="draw-bar"><span id="draws">{{ draws }}</span></div>
+						<div class="loss-bar" id="loss-bar"><span id="losses">{{ losses }}</span></div>
+					</div>
+				</div>
+			</aside>
+		</main>
+		<script>
+			const ASSETS = {
+				rock: {{ url_for('static', filename='assets/rock.svg') | tojson }},
+				paper: {{ url_for('static', filename='assets/paper.svg') | tojson }},
+				scissors: {{ url_for('static', filename='assets/scissors.svg') | tojson }},
+			};
+		</script>
+    </body>
+</html>

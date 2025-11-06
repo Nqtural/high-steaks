@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>High Steaks</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/account.css') }}">
+		<link rel="icon" href="{{ url_for('static', filename='assets/rock.svg') }}" type="image/svg">
+		<script src="{{ url_for('static', filename='js/account.js') }}"></script>
+    </head>
+    <body>
+		<nav>
+			<h1>HIGH STEAKS</h1>
+			<p>Account</p>
+			<div class="dropdown-container">
+				<div class="dropdown">
+					<button id="dropdown-btn" aria-haspopup="true" aria-expanded="false">{{ username }}</button>
+					<div class="menu">
+						{% if is_admin %}
+						<a href="/admin">Admin page</a>
+						{% endif %}
+						<a href="/account">Account</a>
+						<a href="/">Play</a>
+						<a href="/logout">Log out</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<main>
+			<article>
+				<h1>Hello, {{ username }}!</h1>
+				<div class="main-wrapper">
+					<div>
+						<h2>Change password</h3>
+						<form id="password-form" method="post">
+							{{ password_form.hidden_tag() }}
+							<input type="password" name="new_password" placeholder="New password">
+							<input type="password" name="verify_new_password" placeholder="Verify new password">
+							<input type="password" name="current_password" placeholder="Current password">
+							<button type="submit">Update</button>
+						</form>
+						<small id="password-error" class="err" aria-live="polite"></small>
+					</div>
+					<div>
+						<h2>Reset account</h3>
+						<button id="reset-account" type="button">Reset stats</button>
+						<div id="reset-wrapper">
+							<strong class="err">WARNING!</strong>
+							<p>Resetting your account means losing all stats, and starting over from the beginning with {{ default_balance }}¤.</p>
+							<p>Enter the following information to confirm:</p>
+							<form id="reset-form" method="post">
+								{{ reset_form.hidden_tag() }}
+								<input type="text" name="username" placeholder="Username" required maxlength="16">
+								<input type="password" name="password" placeholder="Password" required minlength="6" maxlength="128">
+								<button type="submit">Confirm</button>
+							</form>
+						</div>
+						<small id="reset-error" class="err" aria-live="polite"></small>
+					</div>
+				</div>
+			</article>
+			<aside>
+				<h2>Stats</h2>
+				<table>
+					<tbody>
+						<tr>
+							<td>W/D/L</td>
+							<td>
+								<div class="win-loss-bar">
+									<div class="win-bar"><span class="wins" id="wins">{{ wins }}</span></div>
+									<div class="draw-bar"><span class="draws" id="draws">{{ draws }}</span></div>
+									<div class="loss-bar"><span class="losses" id="losses">{{ losses }}</span></div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Balance</td>
+							<td id="balance">{{ balance }}¤</td>
+						</tr>
+						<tr>
+							<td>Bets</td>
+							<td id="bets">{{ bets }}</td>
+						</tr>
+						<tr>
+							<td>Wagered</td>
+							<td id="wagered">{{ wagered }}¤</td>
+						</tr>
+						<tr>
+							<td>Profit</td>
+							<td id="profit">{{ profit }}¤</td>
+						</tr>
+					</tbody>
+				</table>
+			</aside>
+		</main>
+    </body>
+</html>

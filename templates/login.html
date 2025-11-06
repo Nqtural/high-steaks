@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>High Steaks</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    </head>
+    <body>
+        <main>
+			<h1>Log In</h1>
+			<form method="post" action="{{ url_for('login') }}">
+				{{ form.hidden_tag() }}
+				<div>
+					{{ form.username(placeholder="Username or email") }}
+					{% for e in form.username.errors %}<small class="err">{{ e }}</small>{% endfor %}
+				</div>
+				<div>
+					{{ form.password(placeholder="Password") }}
+					{% for e in form.password.errors %}<small class="err">{{ e }}</small>{% endfor %}
+				</div>
+				{{ form.submit() }}
+			</form>
+			<p>Don't have an account? <a href="register">Register</a> one!</p>
+        </main>
+    </body>
+</html>

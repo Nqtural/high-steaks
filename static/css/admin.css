@@ -1,0 +1,73 @@
+@import "colors.css";
+@import "navbar.css";
+@import "win-loss-bar.css";
+
+body {
+	margin: 0;
+	height: 100vh;
+	background: var(--background);
+	color: var(--text);
+	font-family: "Open Sans", sans-serif;
+}
+
+main {
+	margin: 50px;
+}
+
+table {
+	width: 100%;
+	border-color: var(--accent);
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th,
+td {
+	min-width: 75px;
+	border-color: var(--accent);
+	height: 30px;
+}
+
+td.editing {
+	background: var(--background-secondary);
+}
+
+td.actions {
+	padding: 0;
+	height: 42px;
+	display: flex;
+	min-width: 120px;
+	border: none;
+	background: var(--accent);
+	gap: 1px;
+}
+
+td button {
+	flex: 1;
+	height: 100%;
+	border: none;
+	border-radius: 0;
+	font-size: 14px;
+	background: var(--background);
+	transition: background 0.3s, color 0.3s;
+	color: var(--text);
+}
+
+td button:hover {
+	background: var(--background-secondary);
+}
+
+td button.edit-btn,
+td button.cancel-edit-btn,
+td button.cancel-delete-btn {
+	color: var(--yellow);
+}
+
+td button.delete-btn,
+td button.confirm-delete-btn {
+	color: var(--red);
+}
+
+td button.confirm-edit-btn {
+	color: var(--green);
+}

@@ -1,0 +1,84 @@
+@import "colors.css";
+
+body {
+	margin: 0;
+	height: 100vh;
+	background: var(--background);
+	color: var(--text);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Open Sans", sans-serif;
+}
+
+main {
+	width: 400px;
+	height: 500px;
+	background: var(--background-secondary);
+	padding: 20px;
+	border-radius: 20px;
+	text-align: center;
+}
+
+main form {
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	align-items: center;
+}
+
+main form div {
+	width: 100%;
+}
+
+main form input {
+	padding: 6px;
+	background: var(--background);
+	color: var(--text);
+	border: 2px solid var(--primary);
+	border-radius: 6px;
+	width: 90%;
+	height: 50px;
+	font-size: 20px;
+	box-sizing: border-box;
+}
+
+small.err {
+	color: var(--red);
+}
+
+button {
+	padding: 6px;
+	background: var(--background);
+	color: var(--text);
+	box-sizing: border-box;
+	height: 50px;
+	width: 90%;
+	border: 2px solid var(--primary);
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 20px;
+	transition: background 0.3s;
+}
+
+button:hover {
+	background: var(--background-secondary);
+}
+
+button:active {
+	transition: none;
+	background: var(--background-tertiary);
+}
+
+input:focus,
+button:focus {
+	outline: none;
+}
+
+main p {
+	margin-top: 25px;
+}
+
+a {
+	color: var(--accent);
+}

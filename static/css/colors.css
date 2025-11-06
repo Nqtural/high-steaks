@@ -1,0 +1,12 @@
+:root {
+	--text: #eae0f2;
+	--background: #0f0816;
+	--background-secondary: oklch(0.2389 0.0311 306.3);
+	--background-tertiary: oklch(0.316 0.0311 306.3);
+	--primary: #c299e4;
+	--secondary: #521881;
+	--accent: #9e44e8;
+	--green: oklch(0.8442 0.37 148.24);
+	--red: oklch(0.6543 0.37 20.12);
+	--yellow: oklch(0.9206 0.2047 118);
+}
